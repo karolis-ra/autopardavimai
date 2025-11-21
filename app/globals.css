@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+:root {
+  --brand-bg: #f5f5f7;
+  --brand-bg-dark: #050509;
+  --brand: #111827;
+  --brand-muted: #6b7280;
+  --brand-border: #e5e7eb;
+
+  --brand-accent: #d40032;
+  --brand-accent-hover: #b4002a;
+  --brand-accent-active: #8c0021;
+  --brand-accent-shadow: #d4003233;
+}
+
+/* Bazinis tekstas */
+@layer base {
+  body {
+    background-color: var(--brand-bg);
+    color: var(--brand);
+    font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display), system-ui, -apple-system,
+      BlinkMacSystemFont, "Segoe UI", sans-serif;
+    letter-spacing: -0.03em;
+  }
+}
+
+/* Utility klasės – be @apply (Tailwind v4 draugiška) */
+@layer utilities {
+  .text-muted {
+    color: var(--brand-muted);
+  }
+  .border-brand {
+    border-color: var(--brand-border);
+  }
+
+  /* 🔥 CRIMSON Tesla primary button */
+  .btn-primary {
+    background-color: var(--brand-accent);
+    color: white;
+    padding: 0.75rem 2rem; /* py-3 px-8 */
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 20px var(--brand-accent-shadow);
+  }
+  .btn-primary:hover {
+    background-color: var(--brand-accent-hover);
+  }
+  .btn-primary:active {
+    background-color: var(--brand-accent-active);
+    transform: translateY(0px);
+  }
+
+  /* Ghost button (juodas kontūras su hover invert) */
+  .btn-ghost {
+    border: 1px solid black;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    color: black;
+  }
+  .btn-ghost:hover {
+    background-color: black;
+    color: white;
+  }
+}
