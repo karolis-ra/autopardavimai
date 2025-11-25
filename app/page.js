@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import HowItWorks from "./components/HowItWorks";
 import Separator from "./components/Separator";

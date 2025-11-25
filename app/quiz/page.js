@@ -159,11 +159,12 @@ export default function Quiz() {
   const back = () => setStep((s) => Math.max(s - 1, 0));
 
   return (
-    <main className="mx-auto max-w-4xl px-6 py-10">
-      <header className="mb-6 flex items-center justify-between">
+    <main className="mx-auto max-w-4xl px-6 py-10 min-h-142">
+      <header className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <h1 className="text-3xl font-semibold tracking-tight">
           Automobilio paieškos užklausa
         </h1>
+
         <Link href="/" className="text-sm text-muted hover:text-black">
           ← Grįžti
         </Link>
@@ -171,20 +172,18 @@ export default function Quiz() {
 
       {/* Žingsnių juosta */}
       <div className="mb-6 grid grid-cols-4 gap-2">
-        {["Markė/Modelis", "Parametrai", "Kontaktai", "Peržiūra"].map(
-          (t, i) => (
-            <div
-              key={t}
-              className={`rounded-full px-3 py-2 text-center text-xs sm:text-sm ${
-                i <= step
-                  ? "bg-[var(--brand-accent)] text-white"
-                  : "bg-gray-200 text-gray-600"
-              }`}
-            >
-              {t}
-            </div>
-          )
-        )}
+        {["Markė", "Apie", "Kontaktai", "Peržiūra"].map((t, i) => (
+          <div
+            key={t}
+            className={`rounded-full px-3 py-2 text-center text-xs sm:text-sm ${
+              i <= step
+                ? "bg-[var(--brand-accent)] text-white"
+                : "bg-gray-200 text-gray-600"
+            }`}
+          >
+            {t}
+          </div>
+        ))}
       </div>
 
       <section className="rounded-2xl bg-white p-6 shadow-md ring-1 ring-black/5">

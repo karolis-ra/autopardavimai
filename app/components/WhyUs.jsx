@@ -24,7 +24,7 @@ export default function WhyUs() {
   ];
 
   return (
-    <section className="flex justify-center w-full bg-white py-20 text-[var(--brand)]">
+    <section className="flex justify-center w-full bg-white px-7 py-20 text-[var(--brand)]">
       <div className="max-w-6xl grid gap-10 lg:grid-cols-2 lg:items-center">
         {/* Tekstas + benefitai */}
         <div>

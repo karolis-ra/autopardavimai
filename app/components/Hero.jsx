@@ -1,8 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function Hero() {
+  const router = useRouter();
   return (
     <>
       {/* Content */}
@@ -20,7 +22,7 @@ export default function Hero() {
       >
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/60" />
-        <div className="z-20">
+        <div className="flex flex-col items-center z-20">
           <motion.h1
             initial={{ y: 24, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -34,7 +36,7 @@ export default function Hero() {
             initial={{ y: 16, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.15, duration: 0.6, ease: "easeOut" }}
-            className="mt-4 max-w-2xl text-pretty text-lg text-white/95 sm:text-xl"
+            className="mt-4 max-w-2xl text-pretty text-lg text-white/95 sm:text-xl center"
           >
             Minimalistiška, greita ir paprasta. Gaukite pasiūlymus iš kelių
             salonų vienu paspaudimu.
@@ -52,13 +54,11 @@ export default function Hero() {
 
             <button
               type="button"
-              onClick={() =>
-                window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
-              }
+              onClick={() => router.push("/apie-mus")}
               className="inline-flex items-center justify-center rounded-full 
-                       px-8 py-3 text-sm font-medium tracking-wide
-                       border border-white/80 text-white
-                       hover:bg-white hover:text-black transition"
+                 px-8 py-3 text-sm font-medium tracking-wide
+                 border border-white/80 text-white
+                 hover:bg-white hover:text-black transition"
             >
               Sužinoti daugiau
             </button>

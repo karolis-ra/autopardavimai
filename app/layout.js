@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Inter, Space_Grotesk } from "next/font/google";
 import MainNav from "./components/MainNav";
+import Footer from "./components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
         <MainNav />
         {/* Kad turinys nepradėtųsi po navigacija */}
         <div>{children}</div>
+        <Footer />
       </body>
     </html>
   );

@@ -7,10 +7,9 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const links = [
   { href: "/", label: "Pagrindinis" },
-  { href: "/pasiulymai", label: "Pasiūlymai" },
+  { href: "/quiz", label: "Užklausa" },
   { href: "/apie-mus", label: "Apie mus" },
-  { href: "/kontaktai", label: "Kontaktai" },
-  { href: "/duk", label: "DUK" },
+  { href: "/duk", label: "D.U.K" },
 ];
 
 export default function MainNav() {
